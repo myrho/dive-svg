@@ -1,0 +1,15 @@
+*.xcodeproj
+.DS_Store
+elm-stuff
+elm.js
+.session.vim
+*.swp
+*.swo
+node_modules
+.sass-cache
+js/app.js
+css/style.css*
+electron/node_modules/
+./lib
+electron/app/app
+electron/dist
