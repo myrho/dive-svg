@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="UTF-8"><title>OK Clearance Table</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width">
+    <script type="text/javascript" src="elm.js"></script>
+  </head>
+  <body>
+    <svg id="svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       viewBox="0 0 323.141 322.95" width="1800" height="1000" enable-background="new 0 0 323.141 322.95" xml:space="preserve">
+    <g>
+      <polygon
+        fill="#F0AD00"
+        points="161.649,152.782 231.514,82.916 91.783,82.916"/>
+
+      <polygon
+        fill="#7FD13B"
+        points="8.867,0 79.241,70.375 232.213,70.375 161.838,0"/>
+
+      <rect
+        fill="#7FD13B"
+        x="192.99"
+        y="107.392"
+        transform="matrix(0.7071 0.7071 -0.7071 0.7071 186.4727 -127.2386)"
+        width="107.676"
+        height="108.167"/>
+
+      <polygon
+        fill="#60B5CC"
+        points="323.298,143.724 323.298,0 179.573,0"/>
+
+      <polygon
+        fill="#5A6378"
+        points="152.781,161.649 0,8.868 0,314.432"/>
+
+      <polygon
+        fill="#F0AD00"
+        points="255.522,246.655 323.298,314.432 323.298,178.879"/>
+
+      <polygon
+        fill="#60B5CC"
+        points="161.649,170.517 8.869,323.298 314.43,323.298"/>
+    </g>
+    </svg>
+    <script type="text/javascript">
+      var app = Elm.Main.worker();
+      var svg = document.getElementById('svg');
+      app.ports.viewbox.subscribe(function(vb) {
+        console.log('vb', vb);
+        svg.setAttribute("viewBox", vb);
+      });
+    </script>
+  </body>
+</html>
