@@ -9,7 +9,7 @@ import Ease
 
 main =
   Platform.program
-    { init = (init, Cmd.none)
+    { init = init
     , update = update
     --, view = view
     , subscriptions = subscriptions
@@ -34,20 +34,18 @@ type alias Frame =
   }
 
 init =
-  { current = Frame 0 0 800 600
-  , animation = Nothing
-  , frames = 
-    [ --(100,100, 150,150)
-    --, (100,100, 300,300)
-    Frame 99.7 112  10 10 
-    , Frame 99.7 118  0.5 0.5 
-    , Frame 103 118  0.05 0.05 
-    , Frame 0 0 800 600 
-    , Frame 0 0 1800 1000 
-    , Frame 500 500 1800 1000 
-    , Frame -1000 -1000 2800 2000 
-    ]
-  }
+  let
+      current = 
+        Frame -9.27 -136.16 348.332 462.596
+  in
+    ( { current = current
+      , animation = Nothing
+      , frames = 
+        [ Frame 151.628 153.509 20.592 15.204
+        ]
+      }
+    , current2Viewbox current |> viewbox
+    )
 
 type Msg =
    Tick Float

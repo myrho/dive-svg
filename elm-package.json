@@ -4,18 +4,29 @@
     "repository": "https://github.com/user/project.git",
     "license": "BSD3",
     "source-directories": [
-        "."
+        ".",
+        "../elm-xml/src/"
     ],
     "exposed-modules": [],
+    "native-modules" : true,
     "dependencies": {
         "elm-community/easing-functions": "1.0.2 <= v < 2.0.0",
+        "elm-community/maybe-extra": "3.0.0 <= v < 4.0.0",
+        "Zinggi/elm-webgl-math": "1.0.0 <= v < 2.0.0",
         "elm-lang/animation-frame": "1.0.1 <= v < 2.0.0",
         "elm-lang/core": "5.0.0 <= v < 6.0.0",
         "elm-lang/html": "2.0.0 <= v < 3.0.0",
+        "elm-lang/keyboard": "1.0.1 <= v < 2.0.0",
         "elm-lang/mouse": "1.0.1 <= v < 2.0.0",
         "elm-lang/svg": "2.0.0 <= v < 3.0.0",
+        "elm-lang/virtual-dom": "2.0.4 <= v < 3.0.0",
+        "elm-lang/http": "1.0.0 <= v < 2.0.0",
         "mgold/elm-nonempty-list": "3.0.0 <= v < 4.0.0",
-        "nathanfox/elm-string-format": "1.0.2 <= v < 2.0.0"
+        "nathanfox/elm-string-format": "1.0.2 <= v < 2.0.0",
+        "simonh1000/file-reader" : "1.2.0 <= v < 2.0.0"
+    },
+    "dependency-sources": {
+        "simonh1000/file-reader": "https://github.com/simonh1000/file-reader.git"
     },
     "elm-version": "0.18.0 <= v < 0.19.0"
 }
