@@ -208,6 +208,9 @@ getFloat key attr =
 findNumber children =
     case Debug.log "findNumber" children of
         IntNode nr ->
+            Just <| toFloat nr
+
+        FloatNode nr ->
             Just nr
 
         Tag _ _ children ->
@@ -454,7 +457,7 @@ parseRoot value =
                 errorMsg "no svg tag found"
 
 
-parse : List ( Int, Frame ) -> Float3x3 -> Xml.Value -> ( List (VirtualDom.Node msg), List ( Int, Frame ) )
+parse : List ( Float, Frame ) -> Float3x3 -> Xml.Value -> ( List (VirtualDom.Node msg), List ( Float, Frame ) )
 parse frames parentTransformations value =
     case Debug.log "value" value of
         Tag name attr children ->
@@ -540,9 +543,16 @@ toAttr =
             )
 
 
+initModel : { file : String, time : Int } -> ( Model msg, Cmd Msg )
+initModel { file, time } =
+    ( init
+    , Http.getString (file ++ "?" ++ (toString time)) |> Http.send Load
+    )
+
+
 main =
     Html.programWithFlags
-        { init = \t -> ( init, Http.getString ("presentation.svg?" ++ (toString (t / 1))) |> Http.send Load )
+        { init = initModel
         , update = update
         , subscriptions = subscriptions
         , view = view

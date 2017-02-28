@@ -1,4 +1,7 @@
 <!DOCTYPE HTML>
 <html><head><meta charset="UTF-8"><title>Parse</title><style>html,head,body { padding:0; margin:0; }
 body { font-family: calibri, helvetica, arial, sans-serif; }</style><script type="text/javascript" src="elm.js">
-</script></head><body><script type="text/javascript">Elm.Parse.fullscreen((new Date()).getMilliseconds())</script></body></html>
+</script></head><body><script type="text/javascript">Elm.Parse.fullscreen({
+    file : window.location.href.split("?")[1].split("#")[0],
+    time : (new Date()).getTime()
+    })</script></body></html>
