@@ -5,11 +5,16 @@
     "license": "BSD3",
     "source-directories": [
         ".",
-        "src",
-        "../elm-xml/src/"
+        "src"
     ],
-    "exposed-modules": [],
-    "native-modules" : true,
+    "exposed-modules": 
+      [ "DiveSvg.Model"
+      , "DiveSvg.Update"
+      , "DiveSvg.View"
+      , "DiveSvg.Sub"
+      , "DiveSvg.Parser"
+      ],
+    "native-modules" : false,
     "dependencies": {
         "elm-community/easing-functions": "1.0.2 <= v < 2.0.0",
         "elm-community/maybe-extra": "3.0.0 <= v < 4.0.0",
@@ -22,12 +27,10 @@
         "elm-lang/svg": "2.0.0 <= v < 3.0.0",
         "elm-lang/virtual-dom": "2.0.4 <= v < 3.0.0",
         "elm-lang/http": "1.0.0 <= v < 2.0.0",
-        "mgold/elm-nonempty-list": "3.0.0 <= v < 4.0.0",
-        "nathanfox/elm-string-format": "1.0.2 <= v < 2.0.0",
-        "simonh1000/file-reader" : "1.2.0 <= v < 2.0.0"
+        "myrho/elm-xml" : "2.2.3 <= v < 3.0.0"
     },
     "dependency-sources": {
-        "simonh1000/file-reader": "https://github.com/simonh1000/file-reader.git"
+        "myrho/elm-xml": "https://github.com/myrho/elm-xml.git"
     },
     "elm-version": "0.18.0 <= v < 0.19.0"
 }
