@@ -15,7 +15,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="3frames.svg">
+   sodipodi:docname="demo.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="754.10542"
-     inkscape:cy="363.97672"
+     inkscape:zoom="0.7"
+     inkscape:cx="914.5668"
+     inkscape:cy="361.76188"
      inkscape:document-units="px"
      inkscape:current-layer="g4419"
      showgrid="false"
@@ -55,14 +55,14 @@
      transform="translate(0,-308.26772)">
     <g
        id="g4350"
-       transform="matrix(1.9456115,0,0,1.9456115,225.24875,366.84591)">
+       transform="matrix(1.9456115,0,0,1.9456115,225.24875,386.03881)">
       <polygon
          id="polygon4352"
-         points="161.649,152.782 231.514,82.916 91.783,82.916 "
+         points="231.514,82.916 91.783,82.916 161.649,152.782 "
          style="fill:#f0ad00" />
       <polygon
          id="polygon4354"
-         points="79.241,70.375 232.213,70.375 161.838,0 8.867,0 "
+         points="232.213,70.375 161.838,0 8.867,0 79.241,70.375 "
          style="fill:#7fd13b" />
       <rect
          id="rect4356"
@@ -74,74 +74,75 @@
          style="fill:#7fd13b" />
       <polygon
          id="polygon4358"
-         points="323.298,143.724 323.298,0 179.573,0 "
+         points="323.298,0 179.573,0 323.298,143.724 "
          style="fill:#60b5cc" />
       <polygon
          id="polygon4360"
-         points="152.781,161.649 0,8.868 0,314.432 "
+         points="0,8.868 0,314.432 152.781,161.649 "
          style="fill:#5a6378" />
       <polygon
          id="polygon4362"
-         points="255.522,246.655 323.298,314.432 323.298,178.879 "
+         points="323.298,314.432 323.298,178.879 255.522,246.655 "
          style="fill:#f0ad00" />
       <polygon
          id="polygon4364"
-         points="161.649,170.517 8.869,323.298 314.43,323.298 "
+         points="8.869,323.298 314.43,323.298 161.649,170.517 "
          style="fill:#60b5cc" />
     </g>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:26.09680748px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="466.19791"
-       y="423.81558"
+       y="443.00848"
        id="text4380"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4382"
          x="466.19791"
-         y="423.81558"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff">Focus</tspan><tspan
+         y="443.00848"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold';text-align:center;text-anchor:middle;fill:#ffffff">Focus</tspan><tspan
          sodipodi:role="line"
          x="466.19791"
-         y="456.43658"
+         y="475.62949"
          id="tspan4384"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff">Area A</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold';text-align:center;text-anchor:middle;fill:#ffffff">Area A</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4386"
-       y="649.52661"
+       y="668.71948"
        x="342.07721"
        style="font-style:normal;font-weight:normal;font-size:46.91854477px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff"
-         y="649.52661"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold';text-align:center;text-anchor:middle;fill:#ffffff"
+         y="668.71948"
          x="342.07721"
          id="tspan4388"
          sodipodi:role="line">Focus</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold';text-align:center;text-anchor:middle;fill:#ffffff"
          id="tspan4390"
-         y="708.1748"
+         y="727.36768"
          x="342.07721"
          sodipodi:role="line">Area B</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4392"
-       y="837.75812"
+       y="856.95099"
        x="803.50397"
        style="font-style:normal;font-weight:normal;font-size:17.48106194px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff"
-         y="837.75812"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold';text-align:center;text-anchor:middle;fill:#ffffff"
+         y="856.95099"
          x="803.50397"
          id="tspan4394"
          sodipodi:role="line">Focus</tspan><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold';text-align:center;text-anchor:middle;fill:#ffffff"
          id="tspan4396"
-         y="859.60944"
+         y="878.80231"
          x="803.50397"
          sodipodi:role="line">Area C</tspan></text>
     <g
-       id="g4404">
+       id="g4404"
+       transform="translate(0,19.192898)">
       <rect
          y="377.58029"
          x="365.67523"
@@ -154,16 +155,16 @@
          id="text4400"
          y="479.60571"
          x="532.3504"
-         style="font-style:normal;font-weight:normal;font-size:37.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+         style="font-style:normal;font-weight:normal;font-size:37.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
            y="479.60571"
            x="532.3504"
            id="tspan4402"
-           sodipodi:role="line">1</tspan></text>
+           sodipodi:role="line">2</tspan></text>
     </g>
     <g
        id="g4409"
-       transform="matrix(1.2343031,0,0,1.4013934,-213.3378,54.133126)">
+       transform="matrix(1.2343031,0,0,1.4013934,-213.3378,73.326024)">
       <rect
          style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect4411"
@@ -181,7 +182,7 @@
            sodipodi:role="line"
            id="tspan4415"
            x="532.3504"
-           y="479.60571">2</tspan></text>
+           y="479.60571">3</tspan></text>
       <rect
          y="377.58029"
          x="365.67523"
@@ -194,7 +195,7 @@
        transform="matrix(0.6105283,0,0,0.69317684,518.58992,544.37917)"
        id="g4419">
       <rect
-         y="377.58029"
+         y="405.26862"
          x="365.67523"
          height="110.10663"
          width="192.93913"
@@ -203,21 +204,81 @@
       <text
          sodipodi:linespacing="125%"
          id="text4423"
-         y="479.60571"
+         y="507.29404"
          x="532.3504"
          style="font-style:normal;font-weight:normal;font-size:37.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          xml:space="preserve"><tspan
-           y="479.60571"
+           y="507.29404"
            x="532.3504"
            id="tspan4425"
-           sodipodi:role="line">3</tspan></text>
+           sodipodi:role="line">4</tspan></text>
       <rect
          style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect4427"
          width="192.93913"
          height="110.10663"
          x="365.67523"
-         y="377.58029" />
+         y="405.26862" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:57.64429474px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-238.16319"
+         y="-299.87814"
+         id="text4485"
+         sodipodi:linespacing="125%"
+         transform="scale(1.0655384,0.93849267)"><tspan
+           sodipodi:role="line"
+           id="tspan4487"
+           x="-238.16319"
+           y="-299.87814" /></text>
+      <g
+         id="g4497"
+         transform="matrix(1.0182815,0,0,1.0182815,7.5039617,15.353764)">
+        <rect
+           y="-336.81006"
+           x="-518.50079"
+           height="1008.4376"
+           width="1090.3517"
+           id="rect4491"
+           style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:6.14872503;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        <text
+           transform="scale(1.0655384,0.93849268)"
+           sodipodi:linespacing="125%"
+           id="text4493"
+           y="695.45874"
+           x="459.55225"
+           style="font-style:normal;font-weight:normal;font-size:102.3745575px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             y="695.45874"
+             x="459.55225"
+             id="tspan4495"
+             sodipodi:role="line">1</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:57.64429474px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-113.67133"
+         y="-291.95813"
+         id="text4502"
+         sodipodi:linespacing="125%"
+         transform="scale(1.0655384,0.93849269)"><tspan
+           sodipodi:role="line"
+           id="tspan4504"
+           x="-113.67133"
+           y="-291.95813"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold'">Demo Dive </tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:22.34540558px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="-305.2598"
+         y="-259.39429"
+         id="text4525"
+         sodipodi:linespacing="125%"
+         transform="scale(1.0655384,0.93849269)"><tspan
+           sodipodi:role="line"
+           id="tspan4527"
+           x="-305.2598"
+           y="-259.39429">Use your mouse button or left/right arrow keys to navigate.</tspan></text>
     </g>
   </g>
 </svg>
