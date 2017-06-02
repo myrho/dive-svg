@@ -1,5 +1,9 @@
 module DiveSvg.Parser exposing (load)
 
+{-| .
+@docs load
+-}
+
 import Xml exposing (..)
 import Xml.Decode exposing (decode)
 import DiveSvg.Model exposing (..)
@@ -381,6 +385,7 @@ toAttr =
             )
 
 
+{-| -}
 load : String -> Result String (Model msg)
 load xml =
     let

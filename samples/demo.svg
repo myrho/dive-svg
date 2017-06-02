@@ -29,7 +29,7 @@
      inkscape:cx="914.5668"
      inkscape:cy="361.76188"
      inkscape:document-units="px"
-     inkscape:current-layer="g4419"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1855"
      inkscape:window-height="1056"
@@ -142,7 +142,7 @@
          sodipodi:role="line">Area C</tspan></text>
     <g
        id="g4404"
-       transform="translate(0,19.192898)">
+       transform="translate(0,17.764327)">
       <rect
          y="377.58029"
          x="365.67523"
@@ -164,7 +164,7 @@
     </g>
     <g
        id="g4409"
-       transform="matrix(1.2343031,0,0,1.4013934,-213.3378,73.326024)">
+       transform="matrix(1.2343031,0,0,1.4013934,-216.19494,74.754595)">
       <rect
          style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect4411"
@@ -192,11 +192,11 @@
          style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     </g>
     <g
-       transform="matrix(0.6105283,0,0,0.69317684,518.58992,544.37917)"
-       id="g4419">
+       transform="matrix(0.6105283,0,0,0.69317684,518.58992,545.80774)"
+       id="g4548">
       <rect
-         y="405.26862"
-         x="365.67523"
+         y="409.39041"
+         x="368.01514"
          height="110.10663"
          width="192.93913"
          id="rect4421"
@@ -212,73 +212,63 @@
            x="532.3504"
            id="tspan4425"
            sodipodi:role="line">4</tspan></text>
-      <rect
-         style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         id="rect4427"
-         width="192.93913"
-         height="110.10663"
-         x="365.67523"
-         y="405.26862" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:57.64429474px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="-238.16319"
-         y="-299.87814"
-         id="text4485"
-         sodipodi:linespacing="125%"
-         transform="scale(1.0655384,0.93849267)"><tspan
-           sodipodi:role="line"
-           id="tspan4487"
-           x="-238.16319"
-           y="-299.87814" /></text>
-      <g
-         id="g4497"
-         transform="matrix(1.0182815,0,0,1.0182815,7.5039617,15.353764)">
-        <rect
-           y="-336.81006"
-           x="-518.50079"
-           height="1008.4376"
-           width="1090.3517"
-           id="rect4491"
-           style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:6.14872503;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-        <text
-           transform="scale(1.0655384,0.93849268)"
-           sodipodi:linespacing="125%"
-           id="text4493"
-           y="695.45874"
-           x="459.55225"
-           style="font-style:normal;font-weight:normal;font-size:102.3745575px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-           xml:space="preserve"><tspan
-             y="695.45874"
-             x="459.55225"
-             id="tspan4495"
-             sodipodi:role="line">1</tspan></text>
-      </g>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:57.64429474px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="-113.67133"
-         y="-291.95813"
-         id="text4502"
-         sodipodi:linespacing="125%"
-         transform="scale(1.0655384,0.93849269)"><tspan
-           sodipodi:role="line"
-           id="tspan4504"
-           x="-113.67133"
-           y="-291.95813"
-           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold'">Demo Dive </tspan></text>
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:22.34540558px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         x="-305.2598"
-         y="-259.39429"
-         id="text4525"
-         sodipodi:linespacing="125%"
-         transform="scale(1.0655384,0.93849269)"><tspan
-           sodipodi:role="line"
-           id="tspan4527"
-           x="-305.2598"
-           y="-259.39429">Use your mouse button or left/right arrow keys to navigate.</tspan></text>
     </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4485"
+       y="349.29602"
+       x="362.22635"
+       style="font-style:normal;font-weight:normal;font-size:37.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="349.29602"
+         x="362.22635"
+         id="tspan4487"
+         sodipodi:role="line" /></text>
+    <g
+       transform="matrix(0.6243032,0,0,0.7058407,523.10159,555.02346)"
+       id="g4497">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:#ff0000;stroke-width:6.14872503;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4491"
+         width="1090.3517"
+         height="1008.4376"
+         x="-518.50079"
+         y="-336.81006" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:102.3745575px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="459.55225"
+         y="695.45874"
+         id="text4493"
+         sodipodi:linespacing="125%"
+         transform="scale(1.0655384,0.93849268)"><tspan
+           sodipodi:role="line"
+           id="tspan4495"
+           x="459.55225"
+           y="695.45874">1</tspan></text>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4502"
+       y="354.4483"
+       x="443.21347"
+       style="font-style:normal;font-weight:normal;font-size:37.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Lato;-inkscape-font-specification:'Lato Bold'"
+         y="354.4483"
+         x="443.21347"
+         id="tspan4504"
+         sodipodi:role="line">Demo Dive </tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text4525"
+       y="375.63245"
+       x="318.57724"
+       style="font-style:normal;font-weight:normal;font-size:14.5366106px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="375.63245"
+         x="318.57724"
+         id="tspan4527"
+         sodipodi:role="line">Use your mouse button or left/right arrow keys to navigate.</tspan></text>
   </g>
 </svg>

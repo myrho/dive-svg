@@ -10,7 +10,7 @@ import Html
 
 init : { file : String, time : Int } -> ( Model Msg, Cmd Msg )
 init { file, time } =
-    ( DiveSvg.Model.init
+    ( DiveSvg.Model.init (DiveSvg.Model.Frame 0 0 0 0)
     , Http.getString (file ++ "?" ++ (toString time))
         |> Http.send DiveSvg.Model.Load
     )

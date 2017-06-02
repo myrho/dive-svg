@@ -1,11 +1,16 @@
 module DiveSvg.Sub exposing (..)
 
+{-| .
+@docs subscriptions
+-}
+
 import AnimationFrame
 import Keyboard
 import Mouse
 import DiveSvg.Model exposing (..)
 
 
+{-| -}
 subscriptions : Model msg -> Sub Msg
 subscriptions model =
     Sub.batch

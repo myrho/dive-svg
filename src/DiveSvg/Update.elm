@@ -1,4 +1,8 @@
-module DiveSvg.Update exposing (..)
+module DiveSvg.Update exposing (update)
+
+{-| .
+@docs update
+-}
 
 import DiveSvg.Model exposing (..)
 import Tuple exposing (..)
@@ -7,12 +11,13 @@ import Ease
 import DiveSvg.Parser exposing (load)
 
 
+{-| -}
 update : Msg -> Model msg -> ( Model msg, Cmd Msg )
 update msg model =
     let
         calcProgress oldProgress diff =
             oldProgress
-                + (diff / duration)
+                + (diff / toFloat duration)
                 |> Basics.min 1
 
         calcDiff progress current target =

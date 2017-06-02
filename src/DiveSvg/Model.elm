@@ -1,10 +1,15 @@
-module DiveSvg.Model exposing (..)
+module DiveSvg.Model exposing (duration, init, Model, Msg(..), Frame)
+
+{-| .
+@docs duration, Model, init, Msg, Frame
+-}
 
 import Svg exposing (Svg)
 import VirtualDom exposing (text)
 import Http
 
 
+{-| -}
 type alias Model msg =
     { current : Frame
     , frames : List Frame
@@ -13,6 +18,7 @@ type alias Model msg =
     }
 
 
+{-| -}
 type Msg
     = Tick Float
     | Forth
@@ -20,10 +26,13 @@ type Msg
     | Load (Result Http.Error String)
 
 
+{-| -}
+duration : Int
 duration =
     2000
 
 
+{-| -}
 type alias Frame =
     { x : Float
     , y : Float
@@ -36,5 +45,7 @@ type alias Animation =
     ( Float, Frame )
 
 
-init =
-    Model (Frame 0 0 0 0) [] Nothing (always (text "Please wait. SVG is loading."))
+{-| -}
+init : Frame -> Model Msg
+init current =
+    Model current [] Nothing (always (text "Please wait. SVG is loading."))
