@@ -4,8 +4,7 @@ module DiveSvg.Parser exposing (load)
 @docs load
 -}
 
-import Xml exposing (..)
-import Xml.Decode exposing (decode)
+import Xml.Parser exposing (..)
 import DiveSvg.Model exposing (..)
 import Dict exposing (Dict)
 import Matrix3 exposing (Float3x3)
@@ -15,36 +14,31 @@ import Svg.Attributes exposing (x, y, width, height, viewBox)
 import VirtualDom exposing (attribute, property, text)
 import Tuple exposing (..)
 import Json.Encode as Enc
+import String
 
 
 getFloat key attr =
-    case Debug.log "getFloat" <| Dict.get key attr of
-        Just (FloatNode v) ->
-            Just v
-
-        Just (IntNode v) ->
-            Just <| toFloat v
-
-        _ ->
-            Nothing
+    Dict.fromList attr
+        |> Dict.get key
+        |> Maybe.andThen (String.toFloat >> Result.toMaybe)
 
 
-findNumber children =
-    case Debug.log "findNumber" children of
-        IntNode nr ->
-            Just <| toFloat nr
+findNumber child result =
+    case result of
+        Nothing ->
+            case child of
+                Body nr ->
+                    String.toFloat nr
+                        |> Result.toMaybe
 
-        FloatNode nr ->
+                Element _ _ children ->
+                    List.foldl findNumber Nothing children
+
+                _ ->
+                    Nothing
+
+        Just nr ->
             Just nr
-
-        Tag _ _ children ->
-            findNumber children
-
-        Object (first :: _) ->
-            findNumber first
-
-        _ ->
-            Nothing
 
 
 op2Matrix op =
@@ -136,10 +130,9 @@ matrix2Frame ( ( w, _, _ ), ( _, h, _ ), ( x, y, _ ) ) =
     Frame x y w h
 
 
-attr2Matrix : Dict String Value -> Float3x3
 attr2Matrix attr =
-    case Dict.get "transform" attr of
-        Just (StrNode value) ->
+    case Dict.fromList attr |> Dict.get "transform" of
+        Just value ->
             Regex.find Regex.All (Regex.regex "(translate|scale|matrix|skewX|skewY|rotate)\\(.+?\\)") value
                 |> List.foldr
                     (\{ match } matrix ->
@@ -183,14 +176,17 @@ foldFrame child ( nr, frame ) =
                     )
     in
         case child of
-            Tag name attr children ->
+            Element name attr children ->
                 if name == "rect" then
                     let
                         _ =
                             Debug.log "rect found2" attr
+
+                        dict =
+                            Dict.fromList attr
                     in
-                        case Dict.get "style" attr |> Debug.log "rect found style" of
-                            Just (StrNode style) ->
+                        case Dict.get "style" dict |> Debug.log "rect found style" of
+                            Just style ->
                                 if not <| String.contains "stroke:#ff0000" style then
                                     ( nr, frame )
                                 else
@@ -199,8 +195,8 @@ foldFrame child ( nr, frame ) =
                                     )
 
                             _ ->
-                                case Dict.get "stroke" attr |> Debug.log "rect found color" of
-                                    Just (StrNode color) ->
+                                case Dict.get "stroke" dict |> Debug.log "rect found color" of
+                                    Just color ->
                                         if color /= "#ff0000" then
                                             ( nr, frame )
                                         else
@@ -212,7 +208,7 @@ foldFrame child ( nr, frame ) =
                                     _ ->
                                         ( nr, frame )
                 else if name == "text" then
-                    ( case findNumber children of
+                    ( case List.foldl findNumber Nothing children of
                         Just nr ->
                             Just nr
 
@@ -231,12 +227,7 @@ findFrame name attr children =
     if name /= "g" then
         ( Nothing, Nothing )
     else
-        case children of
-            Object children ->
-                List.foldl foldFrame ( Nothing, Nothing ) children
-
-            _ ->
-                ( Nothing, Nothing )
+        List.foldl foldFrame ( Nothing, Nothing ) children
 
 
 frame2Viewbox current =
@@ -249,8 +240,8 @@ frame2Viewbox current =
         ++ (toString current.h)
 
 
-parseRoot : Xml.Value -> ( Frame -> Svg msg, List Frame )
-parseRoot value =
+parseRoot : List XmlAst -> ( Frame -> Svg msg, List Frame )
+parseRoot roots =
     let
         errorMsg msg =
             ( \_ -> text msg
@@ -259,46 +250,67 @@ parseRoot value =
 
         isSvgTag item =
             case item of
-                Tag "svg" _ _ ->
+                Element "svg" _ _ ->
                     True
 
                 _ ->
                     False
     in
-        case value of
-            Object roots ->
-                case List.filter isSvgTag roots |> Debug.log "filtered" of
-                    (Tag "svg" attr children) :: _ ->
-                        let
-                            ( nodes, frames ) =
-                                parse [] (attr2Matrix attr) children
-                        in
-                            ( (\frame ->
-                                svg
-                                    ((toAttr attr)
-                                        ++ [ frame2Viewbox frame
-                                                |> viewBox
-                                           , width "99vw"
-                                           , height "99vh"
-                                           ]
-                                    )
-                                    nodes
-                              )
-                            , List.sortBy first frames
-                                |> List.map second
+        case List.filter isSvgTag roots |> Debug.log "filtered" of
+            (Element "svg" attr children) :: _ ->
+                let
+                    ( nodes, frames ) =
+                        parse [] (attr2Matrix attr) children
+                in
+                    ( (\frame ->
+                        svg
+                            ((toAttr attr)
+                                ++ [ frame2Viewbox frame
+                                        |> viewBox
+                                   , width "99vw"
+                                   , height "99vh"
+                                   , attribute "preserveAspectRatio" "xMidYMid meet"
+                                   ]
                             )
-
-                    _ ->
-                        errorMsg "no svg tag found"
+                            nodes
+                      )
+                    , List.sortBy first frames
+                        |> List.map second
+                    )
 
             _ ->
                 errorMsg "no svg tag found"
 
 
-parse : List ( Float, Frame ) -> Float3x3 -> Xml.Value -> ( List (VirtualDom.Node msg), List ( Float, Frame ) )
-parse frames parentTransformations value =
-    case Debug.log "value" value of
-        Tag name attr children ->
+parse : List ( Float, Frame ) -> Float3x3 -> List XmlAst -> ( List (VirtualDom.Node msg), List ( Float, Frame ) )
+parse frames parentTransformations children =
+    List.map (parseChild frames parentTransformations) children
+        |> List.unzip
+        |> mapFirst List.concat
+        |> mapSecond List.concat
+
+
+parseChild : List ( Float, Frame ) -> Float3x3 -> XmlAst -> ( List (VirtualDom.Node msg), List ( Float, Frame ) )
+parseChild frames parentTransformations child =
+    case Debug.log "child" child of
+        Element "image" attr children ->
+            ( [ Svg.node "image"
+                    (List.map
+                        (\( k, v ) ->
+                            if k == "xlink:href" then
+                                ( "href", v )
+                            else
+                                ( k, v )
+                        )
+                        attr
+                        |> toAttr
+                    )
+                    []
+              ]
+            , frames
+            )
+
+        Element name attr children ->
             let
                 parentTransformations_ =
                     parentTransformations
@@ -320,13 +332,7 @@ parse frames parentTransformations value =
                             , frames_
                             )
 
-        Object children ->
-            List.map (parse frames parentTransformations) children
-                |> List.unzip
-                |> mapFirst List.concat
-                |> mapSecond List.concat
-
-        StrNode str ->
+        Body str ->
             ( [ tspan
                     [ Enc.string str
                         |> property "innerHTML"
@@ -336,53 +342,12 @@ parse frames parentTransformations value =
             , frames
             )
 
-        IntNode int ->
-            ( [ toString int
-                    |> text
-              ]
-            , frames
-            )
-
-        FloatNode fl ->
-            ( [ toString fl
-                    |> text
-              ]
-            , frames
-            )
-
-        BoolNode b ->
-            ( [ toString b
-                    |> text
-              ]
-            , frames
-            )
-
-        DocType _ _ ->
+        _ ->
             ( [], frames )
 
 
 toAttr =
-    Dict.toList
-        >> List.map
-            (\( key, value ) ->
-                attribute key <|
-                    case value of
-                        StrNode str ->
-                            str
-
-                        IntNode i ->
-                            toString i
-
-                        FloatNode f ->
-                            toString f
-
-                        BoolNode b ->
-                            toString b
-                                |> String.toLower
-
-                        _ ->
-                            ""
-            )
+    List.map (uncurry attribute)
 
 
 {-| -}
@@ -390,7 +355,7 @@ load : String -> Result String (Model msg)
 load xml =
     let
         ( slides, frames ) =
-            decode xml
+            parseXml xml
                 |> Result.map parseRoot
                 |> (\result ->
                         case result of
@@ -400,7 +365,7 @@ load xml =
                                 )
 
                             Err err ->
-                                ( (\_ -> text err)
+                                ( (\_ -> text <| toString err)
                                 , []
                                 )
                    )
