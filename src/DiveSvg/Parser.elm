@@ -346,7 +346,7 @@ toAttr =
 
 
 {-| -}
-load : String -> Result String (Model msg)
+load : String -> Result String Model
 load xml =
     let
         ( slides, frames ) =

@@ -11,7 +11,7 @@ import DiveSvg.Model exposing (..)
 
 
 {-| -}
-subscriptions : Model msg -> Sub Msg
+subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.batch
         [ case model.animation of

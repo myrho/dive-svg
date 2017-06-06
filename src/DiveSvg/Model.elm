@@ -10,11 +10,11 @@ import Http
 
 
 {-| -}
-type alias Model msg =
+type alias Model =
     { current : Frame
     , frames : List Frame
     , animation : Maybe Animation
-    , slides : Frame -> Svg msg
+    , slides : Frame -> Svg Msg
     }
 
 
@@ -46,6 +46,6 @@ type alias Animation =
 
 
 {-| -}
-init : Frame -> Model Msg
+init : Frame -> Model
 init current =
     Model current [] Nothing (always (text "Please wait. SVG is loading."))

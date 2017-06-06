@@ -9,6 +9,6 @@ import Html exposing (Html)
 
 
 {-| -}
-view : Model Msg -> Html Msg
+view : Model -> Html Msg
 view { slides, current } =
     slides current

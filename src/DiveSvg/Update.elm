@@ -12,7 +12,7 @@ import DiveSvg.Parser exposing (load)
 
 
 {-| -}
-update : Msg -> Model msg -> ( Model msg, Cmd Msg )
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     let
         calcProgress oldProgress diff =
