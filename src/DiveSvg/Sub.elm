@@ -23,7 +23,7 @@ subscriptions model =
         , Mouse.clicks (\_ -> Forth)
         , Keyboard.downs
             (\code ->
-                case Debug.log "code" code of
+                case code of
                     37 ->
                         Back
 

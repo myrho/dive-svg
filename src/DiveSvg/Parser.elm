@@ -78,7 +78,7 @@ floatRegex =
 
 
 numbers2 op =
-    case Regex.find (AtMost 2) floatRegex op |> Debug.log "floatRegex" of
+    case Regex.find (AtMost 2) floatRegex op of
         { match } :: rest ->
             String.toFloat match
                 |> Result.toMaybe
@@ -99,7 +99,7 @@ numbers6 op =
         toMaybe =
             .match >> String.toFloat >> Result.toMaybe
     in
-        case Regex.find (AtMost 6) floatRegex op |> Debug.log "floatRegex" of
+        case Regex.find (AtMost 6) floatRegex op of
             a :: b :: c :: d :: e :: f :: _ ->
                 map6 (,,,,,)
                     (toMaybe a)
@@ -148,9 +148,8 @@ attr2Matrix attr =
 transformFrame : Float3x3 -> Frame -> Frame
 transformFrame matrix frame =
     matrix
-        |> Matrix3.mul (frame2Matrix frame |> Debug.log "oldFrame")
+        |> Matrix3.mul (frame2Matrix frame)
         |> matrix2Frame
-        |> Debug.log "newframe"
 
 
 foldFrame child ( nr, frame ) =
@@ -179,13 +178,10 @@ foldFrame child ( nr, frame ) =
             Element name attr children ->
                 if name == "rect" then
                     let
-                        _ =
-                            Debug.log "rect found2" attr
-
                         dict =
                             Dict.fromList attr
                     in
-                        case Dict.get "style" dict |> Debug.log "rect found style" of
+                        case Dict.get "style" dict of
                             Just style ->
                                 if not <| String.contains "stroke:#ff0000" style then
                                     ( nr, frame )
@@ -195,14 +191,13 @@ foldFrame child ( nr, frame ) =
                                     )
 
                             _ ->
-                                case Dict.get "stroke" dict |> Debug.log "rect found color" of
+                                case Dict.get "stroke" dict of
                                     Just color ->
                                         if color /= "#ff0000" then
                                             ( nr, frame )
                                         else
                                             ( nr
                                             , getFrame attr
-                                                |> Debug.log "rect found, getFrame"
                                             )
 
                                     _ ->
@@ -256,7 +251,7 @@ parseRoot roots =
                 _ ->
                     False
     in
-        case List.filter isSvgTag roots |> Debug.log "filtered" of
+        case List.filter isSvgTag roots of
             (Element "svg" attr children) :: _ ->
                 let
                     ( nodes, frames ) =
@@ -292,7 +287,7 @@ parse frames parentTransformations children =
 
 parseChild : List ( Float, Frame ) -> Float3x3 -> XmlAst -> ( List (VirtualDom.Node msg), List ( Float, Frame ) )
 parseChild frames parentTransformations child =
-    case Debug.log "child" child of
+    case child of
         Element "image" attr children ->
             ( [ Svg.node "image"
                     (List.map
@@ -361,7 +356,7 @@ load xml =
                         case result of
                             Ok ( slides, frames ) ->
                                 ( slides
-                                , Debug.log "Frames" frames
+                                , frames
                                 )
 
                             Err err ->

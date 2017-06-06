@@ -31,7 +31,7 @@ update msg model =
             Maybe.map second model.animation
                 |> Maybe.withDefault model.current
     in
-        case Debug.log "msg" msg of
+        case msg of
             Load result ->
                 case result |> Result.mapError toString |> Result.andThen load of
                     Err err ->
