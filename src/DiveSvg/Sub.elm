@@ -27,6 +27,9 @@ subscriptions model =
                     37 ->
                         Back
 
+                    32 ->
+                        Forth
+
                     39 ->
                         Forth
 
