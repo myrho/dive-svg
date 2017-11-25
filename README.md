@@ -1,6 +1,6 @@
 # Dive SVG
 
-Dive SVG is written in [Elm](http://elmlang.org) makes visual presentations like [Prezi](https://prezi.com)'s possible with plain SVG. 
+Dive SVG is written in [Elm](http://elm-lang.org) makes visual presentations like [Prezi](https://prezi.com)'s possible with plain SVG. 
 
 If you are interested in an approach based on HTML5 Canvas, check out [Dive](https://github.com/myrho/dive).
 
